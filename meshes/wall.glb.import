@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cdo3ox2cwwq7v"
-path="res://.godot/imported/wall.glb-07773f05a7ff6e22ad2065b0c2698679.scn"
+path="res://.godot/imported/wall.glb-ff0901c412d8e2d307db0a39572956d1.scn"
 
 [deps]
 
-source_file="res://wall.glb"
-dest_files=["res://.godot/imported/wall.glb-07773f05a7ff6e22ad2065b0c2698679.scn"]
+source_file="res://meshes/wall.glb"
+dest_files=["res://.godot/imported/wall.glb-ff0901c412d8e2d307db0a39572956d1.scn"]
 
 [params]
 
@@ -31,4 +31,4 @@ animation/remove_immutable_tracks=true
 import_script/path=""
 _subresources={}
 gltf/naming_version=1
-gltf/embedded_image_handling=1
+gltf/embedded_image_handling=3
