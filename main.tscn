@@ -1,20 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://csa5cbxjbiyxy"]
+[gd_scene load_steps=8 format=3 uid="uid://csa5cbxjbiyxy"]
 
 [ext_resource type="PackedScene" uid="uid://cv0n3iseuyk23" path="res://player.tscn" id="1_mfai8"]
+[ext_resource type="Texture2D" uid="uid://jvvkjgaqosjt" path="res://epic_bluesunset_equirect_flat.png" id="2_fdafa"]
 [ext_resource type="PackedScene" uid="uid://cdo3ox2cwwq7v" path="res://wall.glb" id="2_jtyll"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_qsalg"]
 size = Vector3(16, 0.05, 32)
 
-[sub_resource type="Gradient" id="Gradient_x08ja"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_cpbgc"]
-gradient = SubResource("Gradient_x08ja")
-fill_from = Vector2(0, 1)
-fill_to = Vector2(0, 0)
-
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_st2v8"]
-panorama = SubResource("GradientTexture2D_cpbgc")
+panorama = ExtResource("2_fdafa")
 
 [sub_resource type="Sky" id="Sky_6l17y"]
 sky_material = SubResource("PanoramaSkyMaterial_st2v8")
@@ -22,6 +16,7 @@ sky_material = SubResource("PanoramaSkyMaterial_st2v8")
 [sub_resource type="Environment" id="Environment_n0fx4"]
 background_mode = 2
 sky = SubResource("Sky_6l17y")
+sky_rotation = Vector3(0, 3.14159, 0)
 
 [node name="Main" type="Node3D"]
 
@@ -38,3 +33,6 @@ environment = SubResource("Environment_n0fx4")
 [node name="CSGMesh3D" type="CSGMesh3D" parent="."]
 
 [node name="Wall" parent="." instance=ExtResource("2_jtyll")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 5.96047e-08, 1, 0, -1, 5.96047e-08, 0, 20, 0)
