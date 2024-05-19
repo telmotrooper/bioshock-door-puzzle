@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://csa5cbxjbiyxy"]
+[gd_scene load_steps=11 format=3 uid="uid://csa5cbxjbiyxy"]
 
+[ext_resource type="Texture2D" uid="uid://bh8ktc3dyne4d" path="res://white_texture.png" id="1_5qoak"]
 [ext_resource type="PackedScene" uid="uid://cv0n3iseuyk23" path="res://player.tscn" id="1_mfai8"]
 [ext_resource type="Texture2D" uid="uid://jvvkjgaqosjt" path="res://epic_bluesunset_equirect_flat.png" id="2_fdafa"]
 [ext_resource type="PackedScene" uid="uid://cdo3ox2cwwq7v" path="res://meshes/wall.glb" id="2_jtyll"]
@@ -7,6 +8,10 @@
 
 [sub_resource type="BoxMesh" id="BoxMesh_qsalg"]
 size = Vector3(16, 0.05, 32)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uifp8"]
+albedo_texture = ExtResource("1_5qoak")
+uv1_scale = Vector3(-12, -12, -12)
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_st2v8"]
 panorama = ExtResource("2_fdafa")
@@ -24,6 +29,7 @@ sky_rotation = Vector3(0, 3.14159, 0)
 [node name="Floor" type="CSGMesh3D" parent="."]
 use_collision = true
 mesh = SubResource("BoxMesh_qsalg")
+material = SubResource("StandardMaterial3D_uifp8")
 
 [node name="Player" parent="." instance=ExtResource("1_mfai8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 8)
@@ -36,4 +42,4 @@ environment = SubResource("Environment_n0fx4")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 5.96047e-08, 1, 0, -1, 5.96047e-08, 0, 20, 0)
 
-[node name="door" parent="." instance=ExtResource("4_yjhkd")]
+[node name="Door" parent="." instance=ExtResource("4_yjhkd")]
