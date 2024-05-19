@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://csa5cbxjbiyxy"]
+[gd_scene load_steps=9 format=3 uid="uid://csa5cbxjbiyxy"]
 
 [ext_resource type="PackedScene" uid="uid://cv0n3iseuyk23" path="res://player.tscn" id="1_mfai8"]
+[ext_resource type="PackedScene" uid="uid://cdo3ox2cwwq7v" path="res://wall.glb" id="2_jtyll"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_qsalg"]
-size = Vector3(15, 0.05, 15)
+size = Vector3(16, 0.05, 32)
 
 [sub_resource type="Gradient" id="Gradient_x08ja"]
 
@@ -29,7 +30,11 @@ use_collision = true
 mesh = SubResource("BoxMesh_qsalg")
 
 [node name="Player" parent="." instance=ExtResource("1_mfai8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 8)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_n0fx4")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+
+[node name="Wall" parent="." instance=ExtResource("2_jtyll")]
